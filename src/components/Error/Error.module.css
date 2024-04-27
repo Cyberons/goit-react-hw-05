@@ -1,0 +1,13 @@
+.text {
+    font-size: 20px;
+    font-weight: 600;
+    color: darkblue;
+}
+
+.active {
+    background-color: yellowgreen;
+}
+
+.link {
+    background-color: white;
+}
