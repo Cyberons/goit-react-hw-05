@@ -5,12 +5,15 @@ import Loading from "../../components/Loading/Loading";
 import Error from "../../components/Error/Error";
 import css from "./MovieCast.module.css";
 
+// MovieCast component definition
 export default function MovieCast() {
+  // Retrieving movieId from URL parameters
   const { movieId } = useParams();
   const [cast, setCast] = useState(null);
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState(false);
 
+  // Fetching movie cast data when the component mounts or movieId changes
   useEffect(() => {
     async function fetchMovieInfoCredits() {
       try {

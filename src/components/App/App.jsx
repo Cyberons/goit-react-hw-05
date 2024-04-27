@@ -3,6 +3,7 @@ import { lazy, Suspense } from "react";
 import Layout from "../Layout/Layout";
 import "./App.css";
 
+// Importing lazy-loaded components
 const HomePage = lazy(() => import("../../pages/HomePage/HomePage"));
 const MoviesPage = lazy(() => import("../../pages/MoviesPage/MoviesPage"));
 const MovieDetailsPage = lazy(() =>
@@ -14,6 +15,7 @@ const NotFoundPage = lazy(() =>
 const MovieReviews = lazy(() => import("../MovieReviews/MovieReviews"));
 const MovieCast = lazy(() => import("../MovieCast/MovieCast"));
 
+// Defining the main App component
 export default function App() {
   return (
     <Layout>
