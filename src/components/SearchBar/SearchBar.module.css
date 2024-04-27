@@ -1,0 +1,27 @@
+.container {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.input {
+    margin-right: 10px;
+    width: 250px;
+    height: 35px;
+    font-size: 20px;
+    border: 2px solid grey;
+    border-radius: 4px;
+}
+
+.input::placeholder {
+    font-size: 20px;
+}
+
+.btn {
+    cursor: pointer;
+    border-radius: 4px;
+    border: 2px solid grey;
+    background-color: lightslategray;
+    color: black;
+}
