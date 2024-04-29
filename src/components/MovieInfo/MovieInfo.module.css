@@ -4,6 +4,6 @@
 
 .list {
     display: flex;
-    gap: 7px;
+    gap: 8px;
     list-style: none;
 }
