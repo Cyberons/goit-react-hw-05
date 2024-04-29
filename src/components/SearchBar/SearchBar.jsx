@@ -2,13 +2,14 @@ import css from "../SearchBar/SearchBar.module.css";
 import PropTypes from 'prop-types';
 
 export default function SearchBar({ value, onSubmit }) {
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    onSubmit(event.target.query.value.trim());
+  };
+
   return (
     <header>
-      <form
-        className={css.container}
-        value={value}
-        onChange={(e) => onSubmit(e.target.value.trim())}
-      >
+      <form className={css.container} onSubmit={handleSubmit}> {/* Зміна на onSubmit */}
         <input
           className={css.input}
           type="text"
