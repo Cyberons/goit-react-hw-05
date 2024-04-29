@@ -1,4 +1,4 @@
-import { Suspense, useEffect, useState } from "react";
+import { Suspense, useEffect, useState, useRef } from "react";
 import { Outlet, useParams } from "react-router-dom";
 import { getMovieId } from "../../movies-api";
 import { Link } from "react-router-dom";
@@ -13,7 +13,7 @@ export default function MovieDetailsPage() {
   const [movie, setMovie] = useState(null);
 
   const location = useLocation();
-  const backLinkHref = location.state ?? "/movies";
+  const backLinkHref = useRef(location.state ?? "/movies"); // Використовуємо useRef для збереження стану посилання повернення назад
 
   useEffect(() => {
     async function fetchMovieInfo() {
@@ -30,9 +30,14 @@ export default function MovieDetailsPage() {
     fetchMovieInfo();
   }, [movieId]);
 
+  const handleSearchSubmit = (event) => {
+    event.preventDefault();
+    // Опрацювання логіки пошуку тут
+  };
+
   return (
     <>
-      <Link className={css.link} to={backLinkHref}>
+      <Link className={css.link} to={backLinkHref.current}>
         Go back
       </Link>
 
